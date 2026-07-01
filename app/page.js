@@ -9,6 +9,7 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [showPass, setShowPass] = useState(false);
+  const appTitle = process.env.NEXT_PUBLIC_APP_TITLE || 'AC Monitor';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -50,9 +51,7 @@ export default function LoginPage() {
           <div className={styles.logoWrap}>
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
               <rect width="40" height="40" rx="12" fill="url(#grad)" />
-              <path d="M12 28L20 12L28 28" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M15 23H25" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
-              <circle cx="20" cy="12" r="2" fill="white" />
+              <path d="M10 20h20M20 10v20M15 15l10 10M25 15l-10 10" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
               <defs>
                 <linearGradient id="grad" x1="0" y1="0" x2="40" y2="40">
                   <stop stopColor="#06b6d4" />
@@ -62,8 +61,8 @@ export default function LoginPage() {
             </svg>
           </div>
           <div>
-            <h1 className={styles.appName}>SUS</h1>
-            <p className={styles.appSub}>Smart Utility Sentinel</p>
+            <h1 className={styles.appName}>{appTitle}</h1>
+            <p className={styles.appSub}>Smart Climate Control</p>
           </div>
         </div>
 
@@ -159,7 +158,7 @@ export default function LoginPage() {
         </div>
 
         <p className={styles.footer}>
-          SUS v1.0 · Smart Home IoT Platform · ESP32 + PZEM-004T
+          AC Monitor v1.0 · Smart Climate Control System
         </p>
       </div>
     </div>
